@@ -10,10 +10,51 @@ body {
 }
 
 .container {
-    padding: 100px 0;
+    padding-top: 100px;
 }
 
-.comment_container {
+/* comment input */
+
+.comment_form {
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 50vw;
+}
+
+.comment_form textarea {
+    resize: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 20px;
+    width: 80%;
+    padding: 10px;
+    word-break: break-all;
+    height: 50px;
+}
+
+.comment_form button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: hsl(238, 40%, 52%);
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* showCase */
+
+.comment_container,
+.reply_container {
     background-color: hsl(0, 0%, 100%);
     display: flex;
     justify-content: center;
@@ -22,7 +63,9 @@ body {
     margin: auto;
     margin-bottom: 20px;
     border-radius: 5px;
-    width: 50vw;
+    width: 800px;
+    max-width: 50vw;
+    word-break: break-all;
 }
 
 .vote {
@@ -31,12 +74,18 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    padding: 12px;
     margin-right: 20px;
     border-radius: 5px;
     color: hsl(238, 40%, 52%);
     font-weight: bold;
+}
+
+/* with out width the number show above each other */
+.vote p {
+    width: 20px;
+    text-align: center;
 }
 
 .vote_btn {
@@ -44,11 +93,11 @@ body {
     border: none;
     outline: none;
     background-color: transparent;
-     color: hsl(238, 40%, 52%);
+    color: hsl(239, 57%, 85%);
 }
 
 .inactive {
-    color: hsl(0, 0%, 100%);
+    color: hsl(238, 40%, 52%);
 }
 
 .header {
@@ -70,23 +119,55 @@ body {
 
 .name {
     margin: 0 20px;
+    letter-spacing: 1px;
 }
 
 .comment_text,
-.date {
+.date,
+.reply_text {
     color: rgb(105, 105, 105);
+    line-height: 1.5rem;
 }
 
 .comment_text {
+    width: 545px;
+    max-width: 40vw;
 }
 
-.reply_icon {
+.header_buutos_container{
+    display: flex;
+}
+
+.header_buttons {
     display: flex;
     cursor: pointer;
     font-weight: bold;
     color: hsl(238, 40%, 52%);
 }
 
-.reply_icon img {
-    margin-right: 5px;
+.header_buttons img {
+    margin: 0 5px 0 20px;
+}
+
+/* reply */
+
+.replies {
+    display: flex;
+    justify-content: center;
+    margin-left: 110px;
+}
+
+.reply_line {
+    width: 3px;
+    margin: 0 35px 20px 0;
+    background-color: rgba(170, 170, 170, 0.2);
+}
+
+.reply_text span {
+    color: hsl(238, 40%, 52%);
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
 }
