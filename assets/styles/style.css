@@ -14,7 +14,6 @@ body {
 }
 
 /* comment input */
-
 .comment_form {
     background-color: hsl(0, 0%, 100%);
     display: flex;
@@ -24,7 +23,8 @@ body {
     margin: auto;
     margin-bottom: 20px;
     border-radius: 5px;
-    width: 50vw;
+    width: 800px;
+    max-width: 80vw;
 }
 
 .comment_form textarea {
@@ -33,9 +33,11 @@ body {
     outline: none;
     margin: 0 20px;
     width: 80%;
+    height: 80px !important;
     padding: 10px;
     word-break: break-all;
     height: 50px;
+    border-color: silver;
 }
 
 .comment_form button {
@@ -52,19 +54,17 @@ body {
 }
 
 /* showCase */
-
 .comment_container,
 .reply_container {
     background-color: hsl(0, 0%, 100%);
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 20px;
     margin: auto;
     margin-bottom: 20px;
     border-radius: 5px;
     width: 800px;
-    max-width: 50vw;
+    max-width: 80vw;
     word-break: break-all;
 }
 
@@ -107,6 +107,10 @@ body {
     margin-bottom: 15px;
 }
 
+.comment_info {
+    width: 100%;
+}
+
 .user_info {
     display: flex;
     justify-content: center;
@@ -129,12 +133,16 @@ body {
     line-height: 1.5rem;
 }
 
-.comment_text {
-    width: 545px;
-    max-width: 40vw;
+.reply_text p,
+.comment_text p {
+    display: inline;
 }
 
-.header_buutos_container{
+.comment_text {
+    width: 100%;
+}
+
+.header_buutons_container {
     display: flex;
 }
 
@@ -150,7 +158,6 @@ body {
 }
 
 /* reply */
-
 .replies {
     display: flex;
     justify-content: center;
@@ -163,11 +170,167 @@ body {
     background-color: rgba(170, 170, 170, 0.2);
 }
 
-.reply_text span {
+.replies_container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.reply_info {
+    width: 100%;
+}
+
+.user_id {
     color: hsl(238, 40%, 52%);
     font-weight: bold;
 }
 
+/* eddit */
+.edit_form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.edit_form textarea {
+    resize: none;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    word-break: break-all;
+    min-height: 50px;
+    margin-bottom: 5px;
+}
+
+.edit_form button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: hsl(238, 40%, 52%);
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
 ::-webkit-scrollbar {
     width: 20px;
+}
+
+/* responsive */
+@media (max-width: 1120px) {
+    .replies {
+        margin-left: 80px;
+    }
+
+    .main_form {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 675px) {
+    .container {
+        padding-right: 20px;
+    }
+    .comment_container,
+    .reply_container {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .edit_form textarea {
+        height: 100px;
+    }
+
+    .vote {
+        flex-direction: row;
+        height: 40px;
+        width: 100px;
+        margin-top: 10px;
+    }
+
+    .header_buutons_container {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .name,
+    .date {
+        font-size: 1rem;
+    }
+
+    .comment_form {
+        position: relative;
+    }
+
+    .main_form textarea,
+    .reply_form textarea {
+        width: 100%;
+        margin: 0 0 30px;
+    }
+
+    .main_form button,
+    .reply_form button {
+        padding: 10px;
+        width: 80px;
+        font-size: 0.7rem;
+        position: absolute;
+        bottom: 5px;
+        right: 30px;
+    }
+
+    .edit_form button {
+        padding: 10px;
+        width: 80px;
+        font-size: 0.7rem;
+    }
+
+    .main_form img,
+    .reply_form img {
+        position: absolute;
+        bottom: 5px;
+        left: 30px;
+        width: 35px;
+    }
+
+    .reply_line {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .comment_container,
+    .reply_container {
+        max-width: 90vw;
+    }
+
+    .replies {
+        margin-left: 30px;
+    }
+
+    .header_buttons img {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px 0 10px;
+    }
+
+    .header_buttons p {
+        font-size: 0.8rem;
+    }
+
+    .name {
+        font-size: 0.9rem;
+    }
+    .date {
+        font-size: 0.7rem;
+    }
 }
